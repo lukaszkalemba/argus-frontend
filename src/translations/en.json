@@ -1,0 +1,17 @@
+{
+  "common:loader": "Loading...",
+  "common:somethingWrong": "Something went wrong...",
+  "common:add": "CREATE",
+  "common:update": "UPDATE",
+
+  "nav:general": "GENERAL",
+  "nav:vehicles": "Vehicles",
+
+  "search:placeholder": "Search...",
+  "search:search": "SEARCH",
+
+  "user:subscription": "Subscription",
+  "user:account": "Account",
+  "user:users": "Users",
+  "user:logOut": "Sign out"
+}

@@ -1,0 +1,169 @@
+{
+  "env": {
+    "browser": true,
+    "jest": true,
+    "es2021": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": "latest",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "airbnb-typescript",
+    "plugin:eslint-comments/recommended",
+    "plugin:jest/recommended",
+    "plugin:promise/recommended",
+    "prettier"
+  ],
+  "plugins": ["react", "@typescript-eslint", "eslint-comments", "jest", "promise", "import", "prettier"],
+
+  "rules": {
+    "react/jsx-props-no-spreading": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "import/extensions": "off",
+    "class-methods-use-this": "off",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/ban-ts-comment": "error",
+    "prettier/prettier": "error",
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          "src",
+          {
+            "name": "styled-components",
+            "message": "Please import from styled-components/macro."
+          }
+        ],
+        "patterns": ["src/*", "../*", "!styled-components/macro"]
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "never",
+        "groups": ["builtin", "external", "internal", "index", "sibling", "parent"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "react-*",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "types/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "config/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "store/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "services/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "providers/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "translations/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "hooks/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "helpers/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "components/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "modules/**/types/*",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "modules/**/pages/*",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "modules/**/store/*",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "modules/**/services/*",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "modules/**/components/*",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "modules/**/validators/*",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "assets/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "styles/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "tests/**",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["internal"]
+      }
+    ],
+    "no-console": ["warn", { "allow": ["error", "warn", "debug"] }]
+  }
+}
