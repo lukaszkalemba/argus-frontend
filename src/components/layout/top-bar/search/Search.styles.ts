@@ -19,7 +19,7 @@ const SearchForm = styled.form<ISearchMobileWrapperProps>`
   padding: 0 16px;
   justify-content: space-between;
   align-items: center;
-  background: white;
+  background: ${({ theme }) => theme.color.light};
   display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
 
   > * {
@@ -70,7 +70,7 @@ const SearchForm = styled.form<ISearchMobileWrapperProps>`
     background-color: ${({ theme }) => theme.color.primary};
     font-weight: ${({ theme }) => theme.font.weight.medium};
     border-radius: 4px;
-    color: white;
+    color: ${({ theme }) => theme.color.light};
     padding: 0 12px;
   }
 

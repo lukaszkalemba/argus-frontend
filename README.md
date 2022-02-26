@@ -39,6 +39,7 @@ Backend Repositiory: <a href="https://github.com/lukaszkalemba/argus-backend/">g
 - React
 - Redux & Redux Toolkit
 - TypeScript
+- Material UI
 - Styled Components
 - React Hook Form & Yup
 - Eslint & Prettier & Styleline

@@ -18,7 +18,7 @@ const NavListWrapper = styled.nav<INavListWrapperProps>`
 
   > div {
     padding: 24px 0;
-    color: white;
+    color: ${({ theme }) => theme.color.light};
     height: 100%;
     overflow: auto;
   }
@@ -79,7 +79,7 @@ const ListGroup = styled.div<INavListWrapperProps>`
 const NavElement = styled(NavLink)<IListGroupProps>`
   display: flex;
   align-items: center;
-  color: white;
+  color: ${({ theme }) => theme.color.light};
   text-decoration: none;
   padding: 12px 24px;
   position: relative;
@@ -105,7 +105,7 @@ const NavElement = styled(NavLink)<IListGroupProps>`
     top: 0;
     height: 100%;
     width: 3px;
-    background: white;
+    background: ${({ theme }) => theme.color.light};
     border-radius: 0 3px 3px 0;
   }
 

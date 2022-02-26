@@ -29,7 +29,7 @@ const OptionsList = styled.ul<IOptionsProps>`
   position: absolute;
   right: 0;
   bottom: -6px;
-  background: white;
+  background: ${({ theme }) => theme.color.light};
   border-radius: 4px;
   list-style-type: none;
   transform: translateY(100%);

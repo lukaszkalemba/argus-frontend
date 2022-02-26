@@ -1,5 +1,6 @@
 export enum Route {
-  Vehicles = '/',
+  Vehicles = 'vehicles',
+  Vehicle = 'vehicles/:id',
   Subscription = 'subscription',
   Account = 'account',
   Users = 'users',

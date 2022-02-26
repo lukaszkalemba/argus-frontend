@@ -1,16 +1,20 @@
 import { FormattedMessage } from 'react-intl';
+import { Add } from '@mui/icons-material';
 import Button from 'components/button/Button.component';
 import S from './PageHead.styles';
-import { IPageHeadProps } from './PageHead.types';
 
-const PageHead: React.FC<IPageHeadProps> = ({ captionId, button }) => (
-  <S.Wrapper>
-    <h2>
-      <FormattedMessage id={captionId} />
-    </h2>
+const PageHead: React.FC = () => {
+  const openModal = () => {};
 
-    {button && <Button {...button} />}
-  </S.Wrapper>
-);
+  return (
+    <S.Wrapper>
+      <h2>
+        <FormattedMessage id="nav:vehicles" />
+      </h2>
+
+      <Button captionId="vehicles:add" icon={<Add />} onClick={openModal} />
+    </S.Wrapper>
+  );
+};
 
 export default PageHead;

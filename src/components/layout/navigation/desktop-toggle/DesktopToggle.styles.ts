@@ -6,7 +6,7 @@ const ToggleButton = styled.button<IToggleButtonProps>`
   right: 0;
   bottom: 10%;
   border-radius: 50%;
-  background-color: white;
+  background-color: ${({ theme }) => theme.color.light};
   justify-content: center;
   align-items: center;
   width: 24px;

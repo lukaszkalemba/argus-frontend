@@ -1,8 +1,6 @@
 {
   "common:loader": "Loading...",
   "common:somethingWrong": "Something went wrong...",
-  "common:add": "CREATE",
-  "common:update": "UPDATE",
 
   "nav:general": "GENERAL",
   "nav:vehicles": "Vehicles",
@@ -13,5 +11,12 @@
   "user:subscription": "Subscription",
   "user:account": "Account",
   "user:users": "Users",
-  "user:logOut": "Sign out"
+  "user:logOut": "Sign out",
+
+  "vehicles:id": "Identifier",
+  "vehicles:name": "Name",
+  "vehicles:type": "Type",
+  "vehicles:createdAt": "Created at",
+  "vehicles:add": "CREATE",
+  "vehicles:update": "UPDATE"
 }

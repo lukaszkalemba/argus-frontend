@@ -20,14 +20,14 @@ const Content = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  color: ${({ theme }) => theme.color.light};
   width: 100%;
   height: 100%;
   background-color: ${({ theme }) => theme.color.hover};
   padding: 0 16px;
 
   svg {
-    color: white;
+    color: ${({ theme }) => theme.color.light};
     width: 24px;
     height: 24px;
   }

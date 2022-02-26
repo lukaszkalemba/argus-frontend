@@ -7,9 +7,9 @@ interface IUseBreakpoint {
   isBreakpoint: boolean;
 }
 
-// Check if window is lesser than passed breakpoint
-export default (passedBreakpoint?: BreakpointsValues): IUseBreakpoint => {
-  const breakpoint: BreakpointsValues = passedBreakpoint || DEFAULT_BREAKPOINT;
+// Check if window is less than passed breakpoint
+export default (givenBreakpoint?: BreakpointsValues): IUseBreakpoint => {
+  const breakpoint: BreakpointsValues = givenBreakpoint || DEFAULT_BREAKPOINT;
 
   const [isBreakpoint, setIBreakpoint] = useState(window.innerWidth < breakpoint);
 

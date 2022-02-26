@@ -6,7 +6,7 @@ const Wrapper = styled.header`
   left: 0;
   width: 100vw;
   height: 48px;
-  background-color: white;
+  background-color: ${({ theme }) => theme.color.light};
   box-shadow: ${({ theme }) => theme.shadow.around};
   display: flex;
   justify-content: space-between;

@@ -1,10 +1,9 @@
 import styled from 'styled-components/macro';
 import { IButtonProps } from './Button.types';
-import { setVariantStyle } from './Button.utils';
 
 const Button = styled.button<Partial<IButtonProps>>`
   border-radius: 4px;
-  color: white;
+  color: ${({ theme }) => theme.color.light};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,8 +12,7 @@ const Button = styled.button<Partial<IButtonProps>>`
   font-weight: ${({ theme }) => theme.font.weight.medium};
   opacity: ${({ disabled }) => disabled && 0.6};
   cursor: ${({ disabled }) => disabled && 'default'};
-
-  ${({ variant }) => setVariantStyle(variant)}
+  background: ${({ theme }) => theme.color.primary};
 
   svg {
     font-size: ${({ theme }) => theme.font.size.l};

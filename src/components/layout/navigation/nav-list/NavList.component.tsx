@@ -37,7 +37,7 @@ const NavList: React.FC<INavListProps> = ({ isOpen, toggleOpen, currentPage }) =
             {navElements.map(({ icon, path, title }) => (
               <S.NavElement
                 $isOpen={isOpen}
-                $isSelected={currentPage.title === title}
+                $isSelected={title.includes(currentPage.title)}
                 onClick={() => isBreakpoint && toggleOpen()}
                 key={path}
                 to={path}
