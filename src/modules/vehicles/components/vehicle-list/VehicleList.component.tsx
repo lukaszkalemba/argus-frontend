@@ -5,13 +5,14 @@ import { FormattedMessage } from 'react-intl';
 import { Table, TableHead, TableRow, TableCell, TableBody, TableContainer } from '@mui/material';
 import useBreakpoint from 'hooks/useBreakpoint.hook';
 import { getDateWithHours } from 'helpers/getDateWithHours.helper';
+import Loader from 'components/loader/Loader.component';
 import { getVehicles } from 'modules/vehicles/store/vehicles.actions';
 import { vehiclesSelector } from 'modules/vehicles/store/vehicles.selectors';
 import S from './VehicleList.styles';
 
 const VehicleList = () => {
   const dispatch = useDispatch();
-  const { list: vehicles } = useSelector(vehiclesSelector);
+  const { list: vehicles, isLoading } = useSelector(vehiclesSelector);
   const navigate = useNavigate();
 
   const { isBreakpoint } = useBreakpoint(768);
@@ -19,6 +20,10 @@ const VehicleList = () => {
   useEffect(() => {
     dispatch(getVehicles());
   }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <TableContainer component={S.Wrapper}>

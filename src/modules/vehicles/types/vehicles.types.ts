@@ -2,6 +2,7 @@ import { IBaseModel } from 'types/IBaseModel.type';
 
 export enum URL {
   Vehicles = '/vehicles',
+  Vehicle = '/vehicles/:id',
 }
 
 export enum VehicleType {
@@ -20,5 +21,6 @@ export interface IVehicle extends IBaseModel {
 
 export interface IVehiclesState {
   isLoading: boolean;
+  currentVehicle: IVehicle | null;
   list: IVehicle[];
 }

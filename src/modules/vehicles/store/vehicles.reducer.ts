@@ -3,6 +3,7 @@ import { IVehiclesState, IVehicle } from 'modules/vehicles/types/vehicles.types'
 
 const initialState: IVehiclesState = {
   isLoading: false,
+  currentVehicle: null,
   list: [],
 };
 
@@ -15,6 +16,11 @@ const vehicles = createSlice({
       isLoading: payload,
     }),
 
+    setCurrentVehicle: (state, { payload }: PayloadAction<IVehicle>): IVehiclesState => ({
+      ...state,
+      currentVehicle: payload,
+    }),
+
     setVehicles: (state, { payload }: PayloadAction<IVehicle[]>): IVehiclesState => ({
       ...state,
       list: payload,
@@ -22,5 +28,5 @@ const vehicles = createSlice({
   },
 });
 
-export const { setVehicles, setLoading } = vehicles.actions;
+export const { setLoading, setCurrentVehicle, setVehicles } = vehicles.actions;
 export default vehicles.reducer;

@@ -1,9 +1,5 @@
-import { FormattedMessage } from 'react-intl';
+import S from './Loader.styles';
 
-const Loader = () => (
-  <div>
-    <FormattedMessage id="common:loader" />
-  </div>
-);
+const Loader = () => <S.Loader />;
 
 export default Loader;

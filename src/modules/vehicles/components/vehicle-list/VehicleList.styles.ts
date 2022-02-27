@@ -1,5 +1,5 @@
+import { lighten } from 'polished';
 import styled from 'styled-components/macro';
-import { rgba } from 'polished';
 import { IStyledTypeProps } from './VehicleList.types';
 import { getTypeStyles } from './VehicleList.utils';
 
@@ -15,11 +15,7 @@ const TableRow = styled.tr`
 
   :hover {
     cursor: pointer;
-    background-color: ${({ theme }) => rgba(theme.color.primary, 0.75)};
-
-    > td {
-      color: ${({ theme }) => theme.color.light};
-    }
+    background-color: ${({ theme }) => lighten(0.33, theme.color.primary)};
   }
 `;
 

@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 
 const Wrapper = styled.div`
+  position: relative;
   width: auto;
   height: 100%;
   display: flex;
