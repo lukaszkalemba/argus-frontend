@@ -17,5 +17,9 @@
   "vehicles:type": "Type",
   "vehicles:createdAt": "Created at",
   "vehicles:add": "CREATE",
-  "vehicles:update": "UPDATE"
+  "vehicles:update": "UPDATE",
+  "vehicles:delete": "DELETE",
+  "vehicles:notFound": "Cannot found given vehicle",
+  "vehicle:deleted": "Vehicle deleted successfully",
+  "vehicles:noVehicles": "There are no vehicles."
 }

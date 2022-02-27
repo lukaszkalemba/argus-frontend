@@ -5,6 +5,7 @@ import { navList, DEFAULT_PAGE } from 'components/layout/navigation/nav-list/Nav
 import BottomBar from 'components/layout/navigation/bottom-bar/BottomBar.component';
 import NavList from 'components/layout/navigation/nav-list/NavList.component';
 import { LOCAL_STORAGE_NAV_STATE } from './Navigation.types';
+import S from './Navigation.styles';
 
 const Navigation = () => {
   const { isBreakpoint } = useBreakpoint(1400);
@@ -47,10 +48,10 @@ const Navigation = () => {
   }, [isBreakpoint]);
 
   return (
-    <div>
+    <S.Wrapper>
       <NavList isOpen={isOpen} toggleOpen={toggleOpen} currentPage={currentPage} />
       <BottomBar isOpen={isOpen} toggleOpen={toggleOpen} currentPage={currentPage} />
-    </div>
+    </S.Wrapper>
   );
 };
 

@@ -9,6 +9,10 @@ class VehiclesService {
     return data;
   }
 
+  async deleteVehicle(id: string): Promise<void> {
+    await RequestService.delete({ url: createUrl(URL.Vehicle, { id }) });
+  }
+
   async getVehicles(): Promise<IVehicle[]> {
     const data = await RequestService.get<IVehicle[]>({ url: createUrl(URL.Vehicles) });
 

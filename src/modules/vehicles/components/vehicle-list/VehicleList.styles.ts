@@ -85,6 +85,20 @@ const Wrapper = styled.div`
   }
 `;
 
+const NoVehiclesInfo = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: -20px;
+
+  h3 {
+    font-size: ${({ theme }) => theme.font.size.l};
+    font-weight: ${({ theme }) => theme.font.weight.medium};
+  }
+`;
+
 export default {
   TableRow,
   VehicleIdentifier,
@@ -92,4 +106,5 @@ export default {
   Type,
   VehicleCreatedAt,
   Wrapper,
+  NoVehiclesInfo,
 };

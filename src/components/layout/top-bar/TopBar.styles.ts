@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 
 const Wrapper = styled.header`
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
@@ -12,6 +12,7 @@ const Wrapper = styled.header`
   justify-content: space-between;
   align-items: center;
   padding-right: 12px;
+  z-index: ${({ theme }) => theme.zIndex.positive1};
 
   > div {
     display: flex;

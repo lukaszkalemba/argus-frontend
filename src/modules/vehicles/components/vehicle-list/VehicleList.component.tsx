@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import { Table, TableHead, TableRow, TableCell, TableBody, TableContainer } from '@mui/material';
+import { Route } from 'types/enums/Route.enum';
 import useBreakpoint from 'hooks/useBreakpoint.hook';
 import { getDateWithHours } from 'helpers/getDateWithHours.helper';
 import Loader from 'components/loader/Loader.component';
@@ -23,6 +24,18 @@ const VehicleList = () => {
 
   if (isLoading) {
     return <Loader />;
+  }
+
+  if (!vehicles.length) {
+    return (
+      <S.Wrapper>
+        <S.NoVehiclesInfo>
+          <h3>
+            <FormattedMessage id="vehicles:noVehicles" />
+          </h3>
+        </S.NoVehiclesInfo>
+      </S.Wrapper>
+    );
   }
 
   return (
@@ -50,7 +63,7 @@ const VehicleList = () => {
         </TableHead>
         <TableBody>
           {vehicles.map(({ _id, name, type, createdAt }, index) => (
-            <TableRow component={S.TableRow} key={_id} onClick={() => navigate(`/vehicles/${_id}`)}>
+            <TableRow component={S.TableRow} key={_id} onClick={() => navigate(`/${Route.Vehicles}/${_id}`)}>
               {!isBreakpoint && <TableCell component={S.VehicleIdentifier}>{index + 1}.</TableCell>}
               <TableCell component={S.VehicleName}>{name}</TableCell>
               <TableCell>

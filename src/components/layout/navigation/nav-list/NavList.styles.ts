@@ -10,7 +10,7 @@ const NavListWrapper = styled.nav<INavListWrapperProps>`
   height: 100vh;
   position: fixed;
   min-width: ${NAVBAR_WIDTH};
-  z-index: ${({ theme }) => theme.zIndex.positive2};
+  z-index: ${({ theme }) => theme.zIndex.positive3};
   top: 0;
   right: 0;
   background-color: ${({ theme }) => theme.color.secondary};

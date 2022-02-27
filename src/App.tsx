@@ -1,8 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components/macro';
-import { PersistGate } from 'redux-persist/integration/react';
-import { persistor, store } from 'store/store';
+import { store } from 'store/store';
 import IntlProvider from 'providers/intl/Intl.provider';
 import ToastsProvider from 'providers/toasts/Toasts.provider';
 import ErrorBoundary from 'components/error-boundary/ErrorBoundary.component';
@@ -15,17 +14,15 @@ const App = () => (
   <Provider store={store}>
     <IntlProvider>
       <ErrorBoundary>
-        <PersistGate persistor={persistor}>
-          <ThemeProvider theme={theme}>
-            <GlobalStyle />
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
 
-            <BrowserRouter>
-              <Layout />
-            </BrowserRouter>
+          <BrowserRouter>
+            <Layout />
+          </BrowserRouter>
 
-            <ToastsProvider />
-          </ThemeProvider>
-        </PersistGate>
+          <ToastsProvider />
+        </ThemeProvider>
       </ErrorBoundary>
     </IntlProvider>
   </Provider>

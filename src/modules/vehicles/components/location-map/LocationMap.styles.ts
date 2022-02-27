@@ -5,7 +5,7 @@ const Wrapper = styled(Tile)`
   width: 100%;
   min-height: 400px;
 
-  > div div {
+  > div > div {
     border-radius: 4px;
   }
 `;

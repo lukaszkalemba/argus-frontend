@@ -1,11 +1,9 @@
-import { FormattedMessage } from 'react-intl';
 import S from './PageHead.styles';
+import { IPageHeadProps } from './PageHead.types';
 
-const PageHead: React.FC = ({ children }) => (
+const PageHead: React.FC<IPageHeadProps> = ({ caption, children }) => (
   <S.Wrapper>
-    <h2>
-      <FormattedMessage id="nav:vehicles" />
-    </h2>
+    <h2>{caption}</h2>
 
     {children}
   </S.Wrapper>

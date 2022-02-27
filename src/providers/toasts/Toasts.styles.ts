@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 
   @media (min-width: 481px) {
     .Toastify__toast-container {
-      top: 72px;
+      top: 62px;
       bottom: unset;
       padding: 0;
     }

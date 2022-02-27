@@ -2,8 +2,8 @@ import { FormattedMessage } from 'react-intl';
 import { IButtonProps } from './Button.types';
 import S from './Button.styles';
 
-const Button: React.FC<IButtonProps> = ({ captionId, icon, onClick }) => (
-  <S.Button onClick={onClick}>
+const Button: React.FC<IButtonProps> = ({ captionId, icon, onClick, danger }) => (
+  <S.Button onClick={onClick} danger={danger}>
     {icon}
 
     <span>

@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { DirectionsCar } from '@mui/icons-material';
 import { Route } from 'types/enums/Route.enum';
 
@@ -15,7 +16,7 @@ export const navList = [
 ];
 
 export interface ICurrentPage {
-  icon: JSX.Element;
+  icon: ReactNode;
   title: string;
 }
 

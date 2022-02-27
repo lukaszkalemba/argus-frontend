@@ -8,11 +8,12 @@ const Button = styled.button<Partial<IButtonProps>>`
   align-items: center;
   justify-content: center;
   padding: 5px 32px 5px 16px;
-  border: 2px solid ${({ theme }) => theme.color.primary};
+  border: 2px solid ${({ theme, danger }) => (danger ? theme.color.error.dark : theme.color.primary)};
   font-weight: ${({ theme }) => theme.font.weight.medium};
   opacity: ${({ disabled }) => disabled && 0.6};
   cursor: ${({ disabled }) => disabled && 'default'};
-  background: ${({ theme }) => theme.color.primary};
+  background: ${({ theme, danger }) => (danger ? theme.color.error.dark : theme.color.primary)};
+  box-shadow: ${({ theme }) => theme.shadow.around};
 
   svg {
     font-size: ${({ theme }) => theme.font.size.l};
