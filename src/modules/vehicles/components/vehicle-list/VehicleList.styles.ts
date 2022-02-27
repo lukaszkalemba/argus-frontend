@@ -1,7 +1,5 @@
 import { lighten } from 'polished';
 import styled from 'styled-components/macro';
-import { IStyledTypeProps } from './VehicleList.types';
-import { getTypeStyles } from './VehicleList.utils';
 
 const TableRow = styled.tr`
   transition: all 150ms ease-in-out;
@@ -39,49 +37,11 @@ const VehicleName = styled.td`
   }
 `;
 
-const Type = styled.span<IStyledTypeProps>`
-  ${({ type }) => getTypeStyles(type)}
-  padding: 4px 20px;
-  border-radius: 4px;
-  text-transform: uppercase;
-  font-weight: ${({ theme }) => theme.font.weight.medium};
-  border: 1px solid;
-
-  ${({ theme }) => theme.media.sm} {
-    padding: 4px 40px;
-  }
-`;
-
 const VehicleCreatedAt = styled.td`
   display: none;
 
   ${({ theme }) => theme.media.sm} {
     display: block;
-  }
-`;
-
-const Wrapper = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: ${({ theme }) => theme.color.light};
-  box-shadow: ${({ theme }) => theme.shadow.around};
-  border-radius: 4px;
-  overflow-x: scroll;
-
-  .MuiTableCell-root {
-    font-size: ${({ theme }) => theme.font.size.xs};
-    font-family: ${({ theme }) => theme.font.family.primary};
-
-    ${({ theme }) => theme.media.sm} {
-      text-align: center;
-    }
-  }
-
-  .MuiTableCell-head {
-    color: ${({ theme }) => theme.color.accent.dark};
-    text-transform: uppercase;
-    font-weight: ${({ theme }) => theme.font.weight.medium};
   }
 `;
 
@@ -99,12 +59,79 @@ const NoVehiclesInfo = styled.div`
   }
 `;
 
+const Wrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: ${({ theme }) => theme.color.light};
+  box-shadow: ${({ theme }) => theme.shadow.around};
+  border-radius: 4px;
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: column;
+
+  .MuiTableCell-root {
+    font-size: ${({ theme }) => theme.font.size.xs};
+    font-family: ${({ theme }) => theme.font.family.primary};
+
+    ${({ theme }) => theme.media.sm} {
+      text-align: center;
+    }
+  }
+
+  .MuiTableCell-head {
+    color: ${({ theme }) => theme.color.accent.dark};
+    text-transform: uppercase;
+    font-weight: ${({ theme }) => theme.font.weight.medium};
+  }
+`;
+
+const Table = styled.table`
+  display: flex;
+  flex-grow: 1;
+`;
+
+const Pagination = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: 15px;
+
+  .MuiTablePagination-selectLabel,
+  .MuiInputBase-root {
+    display: none;
+  }
+
+  .MuiTablePagination-actions {
+    color: ${({ theme }) => theme.color.secondary};
+  }
+
+  .MuiTablePagination-displayedRows {
+    font-size: ${({ theme }) => theme.font.size.s};
+    color: ${({ theme }) => theme.color.secondary};
+    font-family: ${({ theme }) => theme.font.family.primary};
+    font-weight: ${({ theme }) => theme.font.weight.medium};
+  }
+
+  .MuiToolbar-root {
+    padding-top: 15px;
+    overflow: hidden;
+  }
+
+  svg {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+`;
+
 export default {
   TableRow,
   VehicleIdentifier,
   VehicleName,
-  Type,
   VehicleCreatedAt,
-  Wrapper,
   NoVehiclesInfo,
+  Wrapper,
+  Table,
+  Pagination,
 };

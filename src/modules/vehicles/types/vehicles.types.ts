@@ -15,7 +15,8 @@ export interface IVehicle extends IBaseModel {
   createdAt: string;
   name: string;
   type: VehicleType;
-  lastGeoLocation: number[];
+  lat: number;
+  lng: number;
   lastConnection: string;
 }
 

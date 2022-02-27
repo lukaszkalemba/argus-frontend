@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import LocationMap from 'modules/vehicles/components/location-map/LocationMap.component';
 import VehiclePageHead from 'modules/vehicles/components/vehicle-page-head/VehiclePageHead.component';
+import VehicleContent from 'modules/vehicles/components/vehicle-content/VehicleContent.component';
 import Wrapper from 'components/wrapper/Wrapper.component';
 import Loader from 'components/loader/Loader.component';
 import { getVehicle } from 'modules/vehicles/store/vehicles.actions';
@@ -27,9 +27,8 @@ const Vehicle = () => {
 
   return (
     <Wrapper>
-      {/* eslint-disable-next-line no-underscore-dangle */}
-      <VehiclePageHead id={currentVehicle?._id} name={currentVehicle?.name} />
-      <LocationMap lat={13} lng={30} />
+      <VehiclePageHead currentVehicle={currentVehicle} />
+      <VehicleContent currentVehicle={currentVehicle} />
     </Wrapper>
   );
 };

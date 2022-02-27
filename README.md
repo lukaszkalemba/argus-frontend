@@ -7,8 +7,8 @@
 
 ## 🌍 Links
 
-Demo: <a href="https://argus-frontend.netlify.app/">argus-frontend.netlify.app</a><br>
-Backend Repositiory: <a href="https://github.com/lukaszkalemba/argus-backend/">github.com/lukaszkalemba/argus-backend</a>
+Demo: <a href="https://flamboyant-hawking-52b7de.netlify.app">https://flamboyant-hawking-52b7de.netlify.app/vehicles</a><br>
+Backend Repositiory: <a href="https://github.com/lukaszkalemba/vehicle-fleet-backend/">github.com/lukaszkalemba/vehicle-fleet-backend</a>
 
 <br/>
 

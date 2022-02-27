@@ -21,5 +21,21 @@
   "vehicles:delete": "DELETE",
   "vehicles:notFound": "Cannot found given vehicle",
   "vehicle:deleted": "Vehicle deleted successfully",
-  "vehicles:noVehicles": "There are no vehicles."
+  "vehicle:created": "Vehicle created successfully",
+  "vehicle:updated": "Vehicle updated successfully",
+  "vehicles:noVehicles": "You have no vehicles",
+  "vehicles:noVehicle": "Vehicle not found",
+  "addVehicle:nameLabel": "Name",
+  "addVehicle:typeLabel": "Type",
+  "addVehicle:latLabel": "Latitude",
+  "addVehicle:lngLabel": "Longitude",
+  "addVehicle:submit": "SUBMIT",
+  "addVehicle:nameRequired": "Name is required",
+  "addVehicle:latRequired": "Latitude is required",
+  "addVehicle:lngRequired": "Longitude is required",
+  "vehicle:getVehiclesFailed": "Getting vehicles failed",
+  "vehicle:getVehicleFailed": "Getting vehicle failed",
+  "vehicle:addFailed": "Adding vehicle failed",
+  "vehicle:updateFailed": "Updating vehicle failed",
+  "vehicle:deleteFailed": "Deleting vehicle failed"
 }

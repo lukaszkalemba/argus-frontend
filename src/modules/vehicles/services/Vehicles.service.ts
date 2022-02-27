@@ -9,6 +9,14 @@ class VehiclesService {
     return data;
   }
 
+  async addVehicle<T>(payload: T): Promise<void> {
+    await RequestService.post({ url: createUrl(URL.Vehicles), payload });
+  }
+
+  async updateVehicle<T>(id: string, payload: T): Promise<void> {
+    await RequestService.patch({ url: createUrl(URL.Vehicle, { id }), payload });
+  }
+
   async deleteVehicle(id: string): Promise<void> {
     await RequestService.delete({ url: createUrl(URL.Vehicle, { id }) });
   }

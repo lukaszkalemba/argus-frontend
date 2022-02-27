@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
-import { Table, TableHead, TableRow, TableCell, TableBody, TableContainer } from '@mui/material';
+import { Table, TableHead, TableRow, TableCell, TableBody, TableContainer, TablePagination } from '@mui/material';
+import VehicleType from 'modules/vehicles/components/vehicle-type/VehicleType.component';
 import { Route } from 'types/enums/Route.enum';
 import useBreakpoint from 'hooks/useBreakpoint.hook';
 import { getDateWithHours } from 'helpers/getDateWithHours.helper';
@@ -15,12 +16,22 @@ const VehicleList = () => {
   const dispatch = useDispatch();
   const { list: vehicles, isLoading } = useSelector(vehiclesSelector);
   const navigate = useNavigate();
-
   const { isBreakpoint } = useBreakpoint(768);
+
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(isBreakpoint ? 5 : 10);
 
   useEffect(() => {
     dispatch(getVehicles());
   }, []);
+
+  useEffect(() => {
+    setRowsPerPage(isBreakpoint ? 5 : 10);
+  }, [isBreakpoint]);
+
+  const handleChangePage = (_event: unknown, newPage: number) => {
+    setPage(newPage);
+  };
 
   if (isLoading) {
     return <Loader />;
@@ -40,7 +51,7 @@ const VehicleList = () => {
 
   return (
     <TableContainer component={S.Wrapper}>
-      <Table stickyHeader>
+      <Table stickyHeader component={S.Table}>
         <TableHead>
           <TableRow>
             {!isBreakpoint && (
@@ -62,18 +73,28 @@ const VehicleList = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {vehicles.map(({ _id, name, type, createdAt }, index) => (
-            <TableRow component={S.TableRow} key={_id} onClick={() => navigate(`/${Route.Vehicles}/${_id}`)}>
-              {!isBreakpoint && <TableCell component={S.VehicleIdentifier}>{index + 1}.</TableCell>}
-              <TableCell component={S.VehicleName}>{name}</TableCell>
-              <TableCell>
-                <S.Type type={type}>{type}</S.Type>
-              </TableCell>
-              {!isBreakpoint && <TableCell component={S.VehicleCreatedAt}>{getDateWithHours(createdAt)}</TableCell>}
-            </TableRow>
-          ))}
+          {vehicles
+            .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+            .map(({ _id, name, type, createdAt }, index) => (
+              <TableRow component={S.TableRow} key={_id} onClick={() => navigate(`/${Route.Vehicles}/${_id}`)}>
+                {!isBreakpoint && <TableCell component={S.VehicleIdentifier}>{index + 1}.</TableCell>}
+                <TableCell component={S.VehicleName}>{name}</TableCell>
+                <TableCell>
+                  <VehicleType type={type} />
+                </TableCell>
+                {!isBreakpoint && <TableCell component={S.VehicleCreatedAt}>{getDateWithHours(createdAt)}</TableCell>}
+              </TableRow>
+            ))}
         </TableBody>
       </Table>
+
+      <TablePagination
+        component={S.Pagination}
+        count={vehicles.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        onPageChange={handleChangePage}
+      />
     </TableContainer>
   );
 };

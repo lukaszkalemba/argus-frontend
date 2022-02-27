@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100%;
     color: ${({ theme }) => theme.color.dark};
     background-color: ${({ theme }) => theme.color.background};
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   button {

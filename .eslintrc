@@ -164,6 +164,6 @@
         "pathGroupsExcludedImportTypes": ["internal"]
       }
     ],
-    "no-console": ["warn", { "allow": ["error", "warn", "debug"] }]
+    "no-console": "off"
   }
 }
